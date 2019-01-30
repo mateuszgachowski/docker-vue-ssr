@@ -5,10 +5,15 @@ ENV HOST 0.0.0.0
 ENV PORT 8080
 ENV CI true
 ENV CYPRESS_INSTALL_BINARY 0
+ENV SSR_PATH /build
 
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 
 RUN npm i @vueneue/ssr-server
 
-CMD ["./node_modules/@vueneue/ssr-server/docker"]
+ADD run.sh .
+RUN chmod a+x run.sh
+RUN chown node:node run.sh
+
+CMD ["sh", "/home/node/app/run.sh"]
