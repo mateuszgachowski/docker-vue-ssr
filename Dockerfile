@@ -10,8 +10,6 @@ ENV SSR_PATH /build
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 
-RUN npm i @vueneue/ssr-server
-
 ADD run.sh .
 RUN chmod a+x run.sh
 RUN chown node:node run.sh
