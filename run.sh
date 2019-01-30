@@ -5,7 +5,7 @@ echo "=== Installing SSR-server ==="
 npm i @vueneue/ssr-server
 
 echo "=== Installing application depenencies ==="
-npm i
+npm i --production=false
 
 echo "=== Starting server ==="
 ./node_modules/@vueneue/ssr-server/docker
